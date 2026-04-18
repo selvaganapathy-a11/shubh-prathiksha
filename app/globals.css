@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+/* BODY 
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  overflow-x: hidden;
+}
+
+
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+
+.heart {
+  width: 160px;
+  height: 160px;
+
+  clip-path: path("M80 150 L10 80 A40 40 0 1 1 80 40 A40 40 0 1 1 150 80 Z");
+
+  background: radial-gradient(
+    circle at 30% 30%,
+    #fff6cc,
+    #ffd700 40%,
+    #f4c430 60%,
+    #d4af37 80%
+  );
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.3),
+    inset 0 4px 10px rgba(255,255,255,0.8),
+    inset 0 -6px 12px rgba(0,0,0,0.25),
+    0 0 15px rgba(255,215,0,0.6);
+
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+
+@media (min-width: 768px) {
+  .heart {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+
+.floating-heart {
+  position: fixed;
+  bottom: -40px;
+  font-size: 18px;
+  animation: floatUp 6s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+
+.intro {
+  position: fixed;
+  inset: 0;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeOut 1s ease forwards;
+  animation-delay: 3s;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .heart {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heart {
+    width: 260px;
+    height: 260px;
+  }
+}
+.perspective {
+  perspective: 1600px;
+}
+
+
+.-rotate-y-110 {
+  transform: rotateY(-110deg);
+}
+
+.rotate-y-110 {
+  transform: rotateY(110deg);
+}*/
