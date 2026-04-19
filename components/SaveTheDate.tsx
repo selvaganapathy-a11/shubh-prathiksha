@@ -409,10 +409,20 @@ animation: datePop 0.6s ease-out forwards,
           onClick={handleStart}
         >
           <video
-            ref={videoRef}
-            src="/Sequence.mp4"
-            onEnded={handleVideoEnd}
-          />
+  autoPlay
+  muted
+  playsInline
+  loop
+  preload="auto"
+  poster="/fallback.webp"
+  style={{
+    width: "100%",
+    height: "100vh",
+    objectFit: "cover"
+  }}
+>
+  <source src="/Sequence.mp4" type="video/mp4" />
+</video>
         </div>
       )}
 
