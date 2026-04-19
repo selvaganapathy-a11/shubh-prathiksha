@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import confetti from "canvas-confetti";
 export default function WeddingInvitation() {
+
+  const [videoReady, setVideoReady] = useState(false);
   const [phase, setPhase] = useState<"video" | "transition" | "invitation">("video");
   const [revealed, setRevealed] = useState(false);
   const [showCongrats, setShowCongrats] = useState(false);
@@ -402,29 +404,31 @@ animation: datePop 0.6s ease-out forwards,
 
       `}</style>
 
-      {/* VIDEO — shown during "video" and "transition" phases */}
       {(phase === "video" || phase === "transition") && (
-        <div
-          className={`video-wrapper${phase === "transition" ? " exiting" : ""}`}
-          onClick={handleStart}
-        >
-          <video
-  autoPlay
-  muted
-  playsInline
-  loop
-  preload="auto"
-  poster="/fallback.webp"
-  style={{
-    width: "100%",
-    height: "100vh",
-    objectFit: "cover"
-  }}
->
-  <source src="/Sequence.mp4" type="video/mp4" />
-</video>
-        </div>
-      )}
+  <div
+    className={`video-wrapper${phase === "transition" ? " exiting" : ""}`}
+    onClick={handleStart}
+    style={{ background: "#000" }} // prevents flash
+  >
+    <video
+      autoPlay
+      muted
+      playsInline
+      loop
+      preload="auto"
+      onLoadedData={() => setVideoReady(true)}
+      style={{
+        width: "100%",
+        height: "100vh",
+        objectFit: "cover",
+        opacity: videoReady ? 1 : 0,
+        transition: "opacity 0.4s ease"
+      }}
+    >
+      <source src="/Sequence.mp4" type="video/mp4" />
+    </video>
+  </div>
+)}
 
       {/* INVITATION */}
       {phase === "invitation" && (
